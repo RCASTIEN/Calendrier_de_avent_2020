@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Calendrier de l'avent 2020</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="containers">
+        <div class="jumbotron text-center">
+            <h1>Calendrier de l'avent 2020</h1>
+            <img class="header_img" src="img/58356.png" alt="logo_pokemon">
+            <p>Hoo Hoo Hoooooo ! Voici quelques indices jeune dresseur pour ton calendrier de l'avent :p</p>
+            <div class="prfil-contain"><img class="profil" src="profil/profil.png" alt="image_profil"></div>
+        </div>
+        <img class="header_img  header_img_max" src="img/arene.jpg" alt="header_image_noel_arene_pokemon">
+
+        <div class="container-fluid" id="app">
+            
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 case_noel" v-for="message in messages">
+                    <a href="" data-toggle="modal" data-target="#m" @click="setModal(message)"> <img v-bind:src="message.image" class="img-fluid mx-auto d-block" alt="case_number"> </a>
+                </div>
+            </div>
+
+            <div class="modal" id="m">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        
+                        <div class="modal-header">
+                            <h4 class="modal-title">Indice du jour <3</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                                    <div v-html="modal">
+                                        <div v-html="messages.kdo"></div>
+                                    </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <style>
+    body{
+        width: auto;
+        height: 100%;
+        box-sizing: border-box;
+        background:darkred;
+    }
+    .jumbotron{
+        background-color: darkred; 
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+    .jumbotron .text-center{
+        margin: 0;
+        padding: 0;
+    }
+    .prfil-contain{
+        margin-bottom: 20px;
+    }
+    .profil{
+        width: 150px;
+        height: 150px;
+    }
+    .header_img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 100px;
+    }
+    .header_img_max{
+        height: auto;
+        width: 100%;
+    }
+    .container-fluid{
+        margin-top:30px;
+    }
+    .case_noel{
+        margin: 0 0 20px 0;
+    }
+    .reveal_cadeau{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    </style>
+    
+    <script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            modal : '',
+            messages: [
+            {
+                    'number' : 1,
+                    'image' : 'img/1.png',
+                    'kdo' : '<img src="img/kdo/001.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '1er jour du mois de décembre '
+                },
+                {
+                    'number' : 2,
+                    'image' : 'img/2.png',
+                    'kdo' : '<img src="img/kdo/002.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '2eme jour du mois de décembre '
+                },
+                {
+                    'number' : 3,
+                    'image' : 'img/3.png',
+                    'kdo' : '<img src="img/kdo/003.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '3eme jour du mois de décembre '
+                },
+                {
+                    'number' : 4,
+                    'image' : 'img/4.png',
+                    'kdo' : '<img src="img/kdo/004.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '4eme jour du mois de décembre '
+                },
+                {
+                    'number' : 5,
+                    'image' : 'img/5.png',
+                    'kdo' : '<img src="img/kdo/005.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '5eme jour du mois de décembre '
+                },
+                {
+                    'number' : 6,
+                    'image' : 'img/6.png',
+                    'kdo' : '<img src="img/kdo/006.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '6eme jour du mois de décembre '
+                },
+                {
+                    'number' : 7,
+                    'image' : 'img/7.png',
+                    'kdo' : '<img src="img/kdo/007.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '7eme jour du mois de décembre '
+                },
+                {
+                    'number' : 8,
+                    'image' : 'img/8.png',
+                    'kdo' : '<img src="img/kdo/008.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '8eme jour du mois de décembre '
+                },
+                {
+                    'number' : 9,
+                    'image' : 'img/9.png',
+                    'kdo' : '<img src="img/kdo/009.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '9eme jour du mois de décembre '
+                },
+                {
+                    'number' : 10,
+                    'image' : 'img/10.png',
+                    'kdo' : '<img src="img/kdo/010.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '10eme jour du mois de décembre '
+                },
+                {
+                    'number' : 11,
+                    'image' : 'img/11.png',
+                    'kdo' : '<img src="img/kdo/011.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '11eme jour du mois de décembre '
+                },
+                {
+                    'number' : 12,
+                    'image' : 'img/12.png',
+                    'kdo' : '<img src="img/kdo/012.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '12eme jour du mois de décembre '
+                },
+                {
+                    'number' : 13,
+                    'image' : 'img/13.png',
+                    'kdo' : '<img src="img/kdo/013.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '13eme jour du mois de décembre '
+                },
+                {
+                    'number' : 14,
+                    'image' : 'img/14.png',
+                    'kdo' : '<img src="img/kdo/014.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '14eme jour du mois de décembre '
+                },
+                {
+                    'number' : 15,
+                    'image' : 'img/15.png',
+                    'kdo' : '<img src="img/kdo/015.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '15eme jour du mois de décembre '
+                },
+                {
+                    'number' : 16,
+                    'image' : 'img/16.png',
+                    'kdo' : '<img src="img/kdo/016.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '16eme jour du mois de décembre '
+                },
+                {
+                    'number' : 17,
+                    'image' : 'img/17.png',
+                    'kdo' : '<img src="img/kdo/017.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '17eme jour du mois de décembre '
+                },
+                {
+                    'number' : 18,
+                    'image' : 'img/18.png',
+                    'kdo' : '<img src="img/kdo/018.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '18eme jour du mois de décembre '
+                },
+                {
+                    'number' : 19,
+                    'image' : 'img/19.png',
+                    'kdo' : '<img src="img/kdo/019.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '19eme jour du mois de décembre '
+                },
+                {
+                    'number' : 20,
+                    'image' : 'img/20.png',
+                    'kdo' : '<img src="img/kdo/020.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '20eme jour du mois de décembre '
+                },
+                {
+                    'number' : 21,
+                    'image' : 'img/21.png',
+                    'kdo' : '<img src="img/kdo/021.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '21eme jour du mois de décembre '
+                },
+                {
+                    'number' : 22,
+                    'image' : 'img/22.png',
+                    'kdo' : '<img src="img/kdo/022.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '22eme jour du mois de décembre '
+                },
+                {
+                    'number' : 23,
+                    'image' : 'img/23.png',
+                    'kdo' : '<img src="img/kdo/023.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '23eme jour du mois de décembre '
+                },
+                {
+                    'number' : 24,
+                    'image' : 'img/24.png',
+                    'kdo' : '<img src="img/kdo/024.png" alt="cadeau_pokemon_noel" class="reveal_cadeau">',
+                    'contient': '24eme jour du mois de décembre, le grand soir ! '
+                },
+            ],
+        },
+        methods: {
+            setModal(message){
+                let date = new Date();
+                let callDate = new Date('2020-12-' + message.number);
+                callDate.setDate(callDate.getDate()-1);
+                if(callDate >= date){
+                    this.modal = 'Hep Hep Hep, on ne triche pas ! On n\'est pas le ' + message.number + ' décembre'
+                }
+                else{
+                    this.modal = message.kdo;
+                    this.modal += message.contient;
+                }
+            }
+        }
+    })
+    </script>
+
+</body>
+</html>
+
